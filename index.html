@@ -3,68 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>India Food & Tourism | DTU Project</title>
+    <title>Metropolitan Food Tourism</title>
     <style>
         /* THEME COLORS */
-        body { background-color: #F5F5DC; color: #3E2723; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+        body { background-color: #F5F5DC; color: #3E2723; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
         
-        /* HEADER */
         .header { 
-            background-color: #3E2723; color: #E1AD01; padding: 50px 20px; 
+            background-color: #3E2723; color: #E1AD01; padding: 60px 20px; 
             text-align: center; border-bottom: 8px solid #E1AD01; 
         }
 
         .container { padding: 20px; max-width: 800px; margin: auto; }
 
-        /* CITY CARD */
         .city-box { 
             background: white; border-radius: 15px; margin-bottom: 40px; 
             overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
         }
-        /* I adjusted the height so your local photos don't look stretched */
-        .main-img { width: 100%; height: 350px; object-fit: cover; display: block; } 
+        .main-img { width: 100%; height: 300px; object-fit: cover; display: block; }
         .content { padding: 25px; }
         .city-title { color: #D84315; font-size: 32px; margin: 0 0 10px 0; border-bottom: 3px solid #E1AD01; display: inline-block; }
         
         .label { font-weight: bold; display: block; margin-top: 20px; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* BUTTONS */
         .btn-wrap { margin-top: 10px; }
         .button { 
             display: inline-block; padding: 10px 18px; margin: 4px; 
             border-radius: 25px; cursor: pointer; border: none; font-weight: bold; font-size: 13px;
-            transition: transform 0.2s;
+            transition: 0.2s;
         }
         .food-btn { background-color: #E1AD01; color: #3E2723; }
         .place-btn { background-color: #3E2723; color: #E1AD01; }
-        .button:hover { transform: scale(1.05); opacity: 0.9; }
+        .button:hover { transform: scale(1.05); }
 
         /* MODAL POPUP */
         .modal { 
             display: none; position: fixed; z-index: 1000; left: 0; top: 0; 
             width: 100%; height: 100%; background: rgba(0,0,0,0.95); 
-            padding-top: 20px; 
+            padding-top: 40px; 
         }
         .modal-card { 
-            background: white; margin: auto; width: 95%; max-width: 600px; 
+            background: white; margin: auto; width: 90%; max-width: 500px; 
             border-radius: 15px; overflow: hidden; position: relative; 
         }
-        .modal-img { width: 100%; height: 350px; object-fit: cover; }
+        .modal-img { width: 100%; height: 280px; object-fit: cover; }
         .modal-text { padding: 25px; text-align: center; }
-        .close { position: absolute; top: 10px; right: 20px; color: white; font-size: 45px; cursor: pointer; font-weight: bold; z-index: 1001; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        .close { position: absolute; top: 10px; right: 20px; color: white; font-size: 45px; cursor: pointer; font-weight: bold; }
 
-        footer { text-align: center; padding: 50px; background: #3E2723; color: #E1AD01; margin-top: 30px; }
+        /* UPDATED FOOTER */
+        footer { 
+            text-align: center; padding: 60px 20px; background: #3E2723; color: #E1AD01; margin-top: 30px; 
+        }
+        footer h2 { margin: 0; font-size: 24px; letter-spacing: 1px; }
+        footer p { margin: 5px 0 0 0; font-size: 18px; opacity: 0.9; }
     </style>
 </head>
 <body>
 
 <div class="header">
-    <h1 style="margin:0; letter-spacing: 2px;">CITY CHRONICLES</h1>
-    <p style="margin:10px 0 0 0; opacity: 0.8;">Metropolitan Food & Tourism Presentation</p>
+    <h1 style="margin:0; font-size: 36px;">Food, Tourism and Metropolitan cities of India</h1>
+    <p style="margin:15px 0 0 0; font-size: 20px; font-style: italic; letter-spacing: 1px; font-weight: 300;">
+        "One Plate at a Time, One City at a Heartbeat—Experience India Unfiltered."
+    </p>
 </div>
 
 <div class="container">
-
     <div class="city-box">
         <img src="delhi_main.jpg" class="main-img">
         <div class="content">
@@ -74,7 +76,7 @@
                 <button class="button place-btn" onclick="show('Qutub Minar')">Qutub Minar</button>
                 <button class="button place-btn" onclick="show('India Gate')">India Gate</button>
             </div>
-            <span class="label">Must-Try Food</span>
+            <span class="label">Signature Food</span>
             <div class="btn-wrap">
                 <button class="button food-btn" onclick="show('Chole Bhature')">Chole Bhature</button>
                 <button class="button food-btn" onclick="show('Butter Chicken')">Butter Chicken</button>
@@ -93,7 +95,7 @@
                 <button class="button place-btn" onclick="show('Gateway of India')">Gateway of India</button>
                 <button class="button place-btn" onclick="show('Marine Drive')">Marine Drive</button>
             </div>
-            <span class="label">Must-Try Food</span>
+            <span class="label">Signature Food</span>
             <div class="btn-wrap">
                 <button class="button food-btn" onclick="show('Vada Pav')">Vada Pav</button>
                 <button class="button food-btn" onclick="show('Pav Bhaji')">Pav Bhaji</button>
@@ -109,10 +111,10 @@
             <h2 class="city-title">Bangalore</h2>
             <span class="label">Landmarks to Explore</span>
             <div class="btn-wrap">
-                <button class="button place-btn" onclick="show('Lalbagh')">Lalbagh Garden</button>
+                <button class="button place-btn" onclick="show('Lalbagh Garden')">Lalbagh Garden</button>
                 <button class="button place-btn" onclick="show('Bangalore Palace')">Bangalore Palace</button>
             </div>
-            <span class="label">Must-Try Food</span>
+            <span class="label">Signature Food</span>
             <div class="btn-wrap">
                 <button class="button food-btn" onclick="show('Masala Dosa')">Masala Dosa</button>
                 <button class="button food-btn" onclick="show('Filter Coffee')">Filter Coffee</button>
@@ -129,9 +131,9 @@
             <span class="label">Landmarks to Explore</span>
             <div class="btn-wrap">
                 <button class="button place-btn" onclick="show('Marina Beach')">Marina Beach</button>
-                <button class="button place-btn" onclick="show('Kapaleeshwarar')">Kapaleeshwarar Temple</button>
+                <button class="button place-btn" onclick="show('Kapaleeshwarar Temple')">Kapaleeshwarar Temple</button>
             </div>
-            <span class="label">Must-Try Food</span>
+            <span class="label">Signature Food</span>
             <div class="btn-wrap">
                 <button class="button food-btn" onclick="show('Pongal')">Pongal</button>
                 <button class="button food-btn" onclick="show('Chicken 65')">Chicken 65</button>
@@ -140,7 +142,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <div id="pop" class="modal">
@@ -148,44 +149,47 @@
     <div class="modal-card">
         <img id="p-img" class="modal-img" src="">
         <div class="modal-text">
-            <h3 id="p-title" style="margin:0 0 10px 0; font-family: 'Playfair Display', serif; color: #3E2723; font-size: 24px;"></h3>
-            <p id="p-desc" style="color: #555; line-height: 1.5;"></p>
+            <h3 id="p-title" style="margin:0 0 10px 0; font-family: serif;"></h3>
+            <p id="p-desc" style="color: #666;"></p>
         </div>
     </div>
 </div>
 
-<footer><p>DTU Software Engineering | Project 2026</p></footer>
+<footer>
+    <h2>2532161</h2>
+    <p>Rashi Saini</p>
+    <p>Kirorimal College</p>
+</footer>
 
 <script>
     var db = {
-        // ASSUMES ALL LOCAL PHOTOS ARE .jpg FORMAT
-        // PLACES
-        'Qutub Minar': { i: 'delhi_main.jpg', d: 'A UNESCO World Heritage site, this 73m minaret was built in 1193.' },
-        'India Gate': { i: 'delhi_gate.jpg', d: 'The iconic war memorial located on the Rajpath in New Delhi.' },
-        'Gateway of India': { i: 'mumbai_gateway.jpg', d: 'The 20th-century arch monument looking over the Arabian Sea.' },
-        'Marine Drive': { i: 'mumbai_main.jpg', d: 'Known as the Queen\'s Necklace, Mumbai\'s iconic C-shaped promenade.' },
-        'Lalbagh': { i: 'bangalore_main.jpg', d: 'Historic 240-acre botanical garden commissioned by Hyder Ali.' },
-        'Bangalore Palace': { i: 'bangalore_palace.jpg', d: 'Tudor-style palace known for its elegant wood carvings.' },
-        'Marina Beach': { i: 'chennai_main.jpg', d: 'The longest natural urban beach in India, along the Bay of Bengal.' },
-        'Kapaleeshwarar': { i: 'chennai_temple.jpg', d: 'Stunning 7th-century Dravidian temple dedicated to Lord Shiva.' },
-
-        // FOOD
-        'Chole Bhature': { i: 'delhi_chole.jpg', d: 'Tangy chickpeas served with fluffy deep-fried bread. A Delhi soul food.' },
-        'Butter Chicken': { i: 'delhi_butter.jpg', d: 'Tender chicken pieces in a silky, creamy tomato and butter gravy.' },
-        'Golgappe': { i: 'delhi_golgappe.jpg', d: 'Crispy shells filled with spicy flavored water and tamarind chutney.' },
-        'Paratha': { i: 'delhi_paratha.jpg', d: 'Stuffed flatbreads from the world-famous Gali Paranthe Wali.' },
-        'Vada Pav': { i: 'mumbai_vada.jpg', d: 'Mumbai\'s spicy potato burger, served with zesty chutneys.' },
-        'Pav Bhaji': { i: 'mumbai_pav.jpg', d: 'Mashed spicy vegetable curry served with buttered bread rolls.' },
-        'Bhel Puri': { i: 'mumbai_bhel.jpg', d: 'A light, tangy snack made of puffed rice, chutneys, and fresh veggies.' },
-        'Bombay Sandwich': { i: 'mumbai_sandwich.jpg', d: 'Toasted sandwich loaded with masala potatoes and green chutney.' },
-        'Masala Dosa': { i: 'bangalore_dosa.jpg', d: 'Crispy rice crepe stuffed with a flavorful potato mash.' },
-        'Filter Coffee': { i: 'bangalore_coffee.jpg', d: 'Strong, frothy coffee made with traditionally roasted beans.' },
-        'Idli Vada': { i: 'bangalore_idli.jpg', d: 'Steamed rice cakes and crunchy lentil donuts—the ultimate duo.' },
-        'Kesari Bath': { i: 'bangalore_kesari.jpg', d: 'Sweet semolina pudding infused with saffron and ghee.' },
-        'Pongal': { i: 'chennai_pongal.jpg', d: 'A traditional rice and lentil porridge cooked with black pepper.' },
-        'Chicken 65': { i: 'chennai_chicken65.jpg', d: 'The legendary deep-fried spicy chicken appetizer born in Chennai.' },
-        'Sambar Rice': { i: 'chennai_sambar.jpg', d: 'Ultimate comfort meal—rice mixed with aromatic lentil stew.' },
-        'Mysore Pak': { i: 'chennai_mysorepak.jpg', d: 'A rich and buttery sweet made from besan, sugar, and pure ghee.' }
+        'Qutub Minar': { i: 'delhi_main.jpg', d: 'A UNESCO World Heritage site and iconic symbol of Delhi\'s architectural history.' },
+        'India Gate': { i: 'delhi_gate.jpg', d: 'A majestic war memorial located in the heart of New Delhi, built to honor the brave.' },
+        'Chole Bhature': { i: 'delhi_chole.jpg', d: 'Tangy, spicy chickpeas paired with fluffy fried bread—the heartbeat of Delhi street food.' },
+        'Butter Chicken': { i: 'delhi_butter.jpg', d: 'A rich, velvety tomato and butter based chicken curry, globally recognized as a Delhi classic.' },
+        'Golgappe': { i: 'delhi_golgappe.jpg', d: 'Crispy shells filled with spicy flavored water and tangy chutneys—a burst of flavor in every bite.' },
+        'Paratha': { i: 'delhi_paratha.jpg', d: 'Stuffed flatbreads from the world-famous Gali Paranthe Wali, served with curd and pickle.' },
+        
+        'Gateway of India': { i: 'mumbai_gateway.jpg', d: 'An iconic 20th-century arch-monument looking out over the vast Arabian Sea.' },
+        'Marine Drive': { i: 'mumbai_main.jpg', d: 'The "Queen\'s Necklace"—Mumbai\'s breathtaking coastal promenade that glows at night.' },
+        'Vada Pav': { i: 'mumbai_vada.jpg', d: 'Mumbai\'s legendary spicy potato burger and the city\'s most beloved on-the-go snack.' },
+        'Pav Bhaji': { i: 'mumbai_pav.jpg', d: 'Mashed spicy vegetable curry served with buttery toasted buns—a true Mumbai street legend.' },
+        'Bhel Puri': { i: 'mumbai_bhel.jpg', d: 'A light, tangy, and crunchy snack made of puffed rice, fresh veggies, and zesty chutneys.' },
+        'Bombay Sandwich': { i: 'mumbai_sandwich.jpg', d: 'A classic toasted sandwich loaded with masala potatoes, fresh vegetables, and spicy green chutney.' },
+        
+        'Lalbagh Garden': { i: 'bangalore_main.jpg', d: 'A historic 240-acre botanical garden famous for its stunning glass house and exotic flora.' },
+        'Bangalore Palace': { i: 'bangalore_palace.jpg', d: 'An opulent palace inspired by Windsor Castle, known for its elegant wood carvings and royal charm.' },
+        'Masala Dosa': { i: 'bangalore_dosa.jpg', d: 'A thin, golden-crispy fermented rice crepe stuffed with a perfectly seasoned potato filling.' },
+        'Filter Coffee': { i: 'bangalore_coffee.jpg', d: 'Strong, frothy coffee brewed with traditional chicory-infused beans—the true aroma of Bangalore.' },
+        'Idli Vada': { i: 'bangalore_idli.jpg', d: 'The ultimate breakfast duo: soft, pillowy steamed rice cakes and crunchy, savory lentil donuts.' },
+        'Kesari Bath': { i: 'bangalore_kesari.jpg', d: 'A melt-in-the-mouth sweet semolina pudding infused with premium saffron, nuts, and golden ghee.' },
+        
+        'Marina Beach': { i: 'chennai_main.jpg', d: 'The longest natural urban beach in India, a place where the city meets the serenity of the Bay of Bengal.' },
+        'Kapaleeshwarar Temple': { i: 'chennai_temple.jpg', d: 'A stunning 7th-century Dravidian Shiva temple, a masterpiece of colorful gopurams and spiritual history.' },
+        'Pongal': { i: 'chennai_pongal.jpg', d: 'A traditional South Indian rice and lentil comfort dish tempered with black pepper, ginger, and cumin.' },
+        'Chicken 65': { i: 'chennai_chicken65.jpg', d: 'The world-famous deep-fried spicy chicken appetizer born in Chennai—packed with heat and flavor.' },
+        'Sambar Rice': { i: 'chennai_sambar.jpg', d: 'A soul-satisfying meal where rice is slow-cooked to perfection with aromatic lentils and local spices.' },
+        'Mysore Pak': { i: 'chennai_mysorepak.jpg', d: 'A rich, decadent sweet made from roasted gram flour, sugar, and high-quality ghee.' }
     };
 
     function show(key) {
